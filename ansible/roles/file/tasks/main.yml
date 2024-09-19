@@ -1,0 +1,16 @@
+- name: Check if /etc/passwd exists
+  ansible.builtin.stat:
+    path: /etc/passwd
+    checksum_algorithm: sha256
+  register: stat_result
+
+- name: Create file
+  ansible.builtin.copy:
+    dest: /home/test_user/test_file
+    content: |
+      {% if stat_result.stat.exists %}
+      {{stat_result.stat.checksum}}
+      {% else %}
+      false
+      {% endif %}
+

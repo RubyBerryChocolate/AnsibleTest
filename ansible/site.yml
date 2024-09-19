@@ -1,0 +1,9 @@
+---
+# Use roles to create test_group, test_user and test_file
+
+- name: Main playbook
+  hosts: containers
+  roles:
+    - role: group
+    - role: user
+    - role: file

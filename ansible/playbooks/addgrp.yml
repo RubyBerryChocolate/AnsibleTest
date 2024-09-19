@@ -1,0 +1,7 @@
+- name: Create test group
+  hosts: containers
+  tasks:
+    - name: Ensure the test_group exists
+      ansible.builtin.group:
+        name: test_group
+        state: present

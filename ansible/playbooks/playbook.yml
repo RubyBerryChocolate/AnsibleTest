@@ -1,0 +1,5 @@
+- name: Sample play
+  hosts: containers
+  tasks:
+    - name: uname
+      ansible.builtin.raw: uname -a

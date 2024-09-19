@@ -1,0 +1,8 @@
+- name: Create a test user with a home dir and belonging to a test group
+  hosts: containers
+  tasks:
+    - name: Add test user
+      ansible.builtin.user:
+        name: test_user
+        create_home: yes
+        group: test_group

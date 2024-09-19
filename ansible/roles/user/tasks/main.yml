@@ -1,0 +1,6 @@
+- name: Add test_user
+  ansible.builtin.user:
+    name: test_user
+    create_home: yes
+    group: test_group
+
